@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Кировский ССК</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  
+  <div id="popup" class="popup">
+    <div class="popup__content">
+      <span id="close-popup" class="popup__close">&times;</span>
+      <p></p>
+      <p></p>
+      <p></p>
+    </div>
+  </div>
+
+  <a href="https://sloboda.kssk.ru/" target="_blank">
+    <article class="banner">
+      <button id="open-popup" class="popup-button">Реклама</button>
+      <img class="titleImg" src="title.png" alt="">
+      <h1 class="title">твоя новая <br>история</h1>
+      <img class="lineOne" src="lineOne.png" alt="">
+      <img class="lineTwo" src="lineTwo.png" alt="">
+      <img class="girl" src="girl.png" alt="">
+      <img class="rac" src="rac.png" alt="">
+      <img class="logo" src="logo.png" alt="">
+    </article>
+  </a>
+
+  <script>
+    const popup = document.getElementById('popup');
+    const openPopupButton = document.getElementById('open-popup');
+    const closePopupButton = document.getElementById('close-popup');
+
+    openPopupButton.addEventListener('click', (event) => {
+    event.stopPropagation(); 
+    event.preventDefault();
+    popup.style.display = 'flex';
+    });
+
+    closePopupButton.addEventListener('click', () => {
+      popup.style.display = 'none'; 
+    });
+
+    popup.addEventListener('click', (event) => {
+       if (event.target === popup) {
+         popup.style.display = 'none';
+       }
+     });
+  </script>
+
+</body>
+</html>
